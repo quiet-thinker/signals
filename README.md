@@ -26,3 +26,27 @@ evento += mi_handler  # Suscribirse
 evento.emit("Hola!")  # Disparar evento
 evento -= mi_handler  # Desuscribirse
 ```
+### También podemos heredar de la calse event
+```python
+
+from events import Event 
+
+class Label(Event):
+    def __init__(self):
+        self.text_changed = Event()
+
+    def set_text(self, text):
+        self.text = text
+        self.text_changed.emit(self.text)
+
+def print_label(text):
+    print("Label printed:", text)
+
+def main():
+    label = Label()
+    label.text_changed += print_label
+    label.set_text("Hola mundo")
+    label.set_text("Adios mundo")
+    label.text_changed -= print_label
+    label.set_text("No se imprimira")
+```
