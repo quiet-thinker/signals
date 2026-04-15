@@ -39,6 +39,9 @@ class Label(Event):
         self.text = text
         self.text_changed.emit(self.text)
 
+def print_label(text):
+    print("Label printed:", text)
+
 def main():
     label = Label()
     label.text_changed += print_label
