@@ -26,7 +26,7 @@ evento += mi_handler  # Suscribirse
 evento.emit("Hola!")  # Disparar evento
 evento -= mi_handler  # Desuscribirse
 ```
-### También podemos heredar de la calse event
+> ### También podemos heredar de la calse event
 ```python
 
 from events import Event 
